@@ -6,6 +6,9 @@
 	<title>Results</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
+			<style>
+		h1 {text-align: center;}
+	</style>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="index.php">Gym diary</a>
@@ -21,13 +24,15 @@
         <a class="nav-link" href="joku.php">Workouts</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="index.php?logout='1'">Log out</a>
+   <a class="nav-link" href="index.php?logout='1'" onclick="return confirm('Are you sure ?');">Log out</a>
+
       </li>
       
       
     </ul>
   </div>
 </nav>
+		<div class="jumbotron"> <h1>GYM DIARY</h1></div>
 <h1>All records</h1>
 			
 	 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -1,4 +1,5 @@
 <?php 
+
   session_start(); 
 
   if (!isset($_SESSION['username'])) {
@@ -18,6 +19,9 @@
 	<title>Home</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
+		<style>
+		h1 {text-align: center;}
+	</style>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="index.php">Gym diary</a>
@@ -27,20 +31,21 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="index">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="joku.php">Workouts</a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="index.php?logout='1'">Log out</a>
+        <a class="nav-link" href="index.php?logout='1'" onclick="return confirm('Are you sure ?');">Log out</a>
       </li>
       
       
     </ul>
   </div>
 </nav>
+	<div class="jumbotron"> <h1>GYM DIARY</h1></div>
 <div class="header">
 	<h2>Home Page</h2>
 </div>
@@ -60,7 +65,8 @@
     <!-- logged in user information -->
     <?php  if (isset($_SESSION['username'])) : ?>
     	<p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
-    	<p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
+	<p> <a href="joku.php">Workout</a> </p>
+    	<p> <a href="index.php?logout='1'" onclick="return confirm('Are you sure ?');">Log out</a> </p>
     <?php endif ?>
 </div>
 	<script> $(function(){
